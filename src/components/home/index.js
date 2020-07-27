@@ -14,7 +14,7 @@ export default () => {
                         <div class="home-row-header">
                             <div class="home-header-name">
                                 <span>
-                                    ${response.login}
+                                    ${response.name || response.login}
                                 </span>
                             </div>
                             <div class="home-menu">

@@ -6,7 +6,7 @@ import './style.scss'
 const App = () => html`<wc-app>
     ${Home()}
     ${About}
-    ${Favorite}
+    ${Favorite()}
 <wc-app/>`
 
 export default App;

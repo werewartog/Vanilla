@@ -74,8 +74,7 @@
         width: 130px;
         height: 130px;
         border-radius: 50%;
-        background: url("https://townsquare.media/site/295/files/2019/10/Terminator-Orion.jpg?w=980&q=75") no-repeat;
-        background-size: cover;
+        background-size: cover!important;
     }
     &-footer {
         display: flex;
@@ -102,6 +101,12 @@
         border: solid 1.5px #8abb98;
         color: #8abb98;
         background-color: rgb(236, 236, 236);
+    }
+}
+.repositorios {
+    &-overflow {
+        max-height: 90px;
+        overflow: auto;
     }
 }
 
