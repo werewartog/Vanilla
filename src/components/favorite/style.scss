@@ -1,0 +1,114 @@
+.favorite {
+    &-column {
+        display: flex;
+        justify-content: space-between;
+        background: #ebf6ee;
+        background-size: cover;
+        position: relative;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+    }
+    &-title--box {
+        margin-top: 50px;
+    }
+    &-center--box {
+        box-shadow: 0px 1px 3px #ccc;
+        padding: 35px 25px;
+        height: auto;
+        background: #fff;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-center--box--collapse {
+        max-height: 350px;
+        margin-bottom: 18px;
+        box-shadow: 0px 1px 3px #ccc;
+        padding: 35px 25px;
+        height: auto;
+        background: #fff;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        position: unset;
+        top: unset;
+        left: unset;
+        transform: unset;
+    }
+    &-image--container {
+        display: flex;
+        width: 33%;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+    }
+    &-list--container {
+        display: flex;
+        width: 63%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-table--repositorios {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-list-repos {
+        display: flex;
+        flex-direction: column;
+    }
+    &-list-repos--button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &-avatar-box {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: url("https://townsquare.media/site/295/files/2019/10/Terminator-Orion.jpg?w=980&q=75") no-repeat;
+        background-size: cover;
+    }
+    &-footer {
+        display: flex;
+        width: 100%;
+        background: #373737;
+        height: 100px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &-text-footer {
+        color: #fff;
+    }
+    &-div-button {
+        cursor: pointer;
+        padding: 5px;
+        text-align: center;
+        width: 45%;
+        border: solid 1.5px #9ad2ab;
+        color: #9ad2ab;
+        border-radius: 3px;
+    }
+    &-div-button:hover {
+        border: solid 1.5px #8abb98;
+        color: #8abb98;
+        background-color: rgb(236, 236, 236);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.show{
+    display: flex;
+}
