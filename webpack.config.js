@@ -9,7 +9,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, PUBLIC_DIR),
         hot: true,
-        port: 3340,
+        port: 3333,
         open: true
     },
     entry: path.resolve(__dirname, 'src', 'index.js'),
@@ -46,7 +46,7 @@ module.exports = {
                 test: /\.(png|jpe?g|gif)$/i,
                 loader: 'file-loader',
                 options: {
-                  name: '[path][name].[ext]',
+                    name: '[path][name].[ext]',
                 },
             },
         ]
