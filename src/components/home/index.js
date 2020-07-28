@@ -47,9 +47,9 @@ export default () => {
                         </div>
                     </div>
                     <div class="home-footer">
-                        ${facebookIcon}
-                        ${githubIcon}
-                        ${linkedinIcon} 
+                        ${facebookIcon().innerHTML}
+                        ${githubIcon().innerHTML}
+                        ${linkedinIcon().innerHTML} 
                     </div>
                 </div>
             </div>`

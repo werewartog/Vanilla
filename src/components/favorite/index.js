@@ -1,25 +1,78 @@
 import './style.scss';
-import {getUser} from '../../service/api'
+import { getUser } from '../../service/api'
+import ListRepository from './repository'
+import ListFavorites from './listfavorite'
 
 
 
 export default () => {
 
+    let showRepository = false;
+    let addRepositoryList = true;
+    let showFavorites = false;
+    let addFavoriteList = true;
 
     const buttonRepositorio = `
-    <div id="buttonRepositorio" onCLick="showRepositorio()" class="favorite-div-button">Ver favoritos</div>
+    <div id="buttonRepositorio" onCLick="showRepositorio()" class="favorite-div-button">Ver repositorios</div>
     `
+    const buttonFavorites = `
+    <div id="buttonRepositorio" onCLick="showListFavorites()" class="favorite-div-button">Ver favoritos</div>
+    `
+
     window.showRepositorio = () => {
+        showFavorites = false;
+        let favorites = document.querySelector(".favorite-table--favorites");
         let repositorios = document.querySelector(".favorite-table--repositorios");
         let centerBox = document.querySelector(".favorite-center--box");
-        repositorios.classList.toggle("show");
-        centerBox.classList.toggle("favorite-center--box--collapse");
+        let idRepository = document.getElementById('repository');
+        if(addRepositoryList){
+            idRepository.appendChild(ListRepository())
+            addRepositoryList= false;
+        }
+        
+        if (!showRepository) {
+            repositorios.classList.add("show");
+            favorites.classList.remove("show");
+            centerBox.classList.remove("favorite-collapse-favorites");
+            centerBox.classList.add("favorite-collapse-repository");
+            
+            showRepository = true;
+        } else {
+            repositorios.classList.remove("show");
+            centerBox.classList.remove("favorite-collapse-favorites");
+            centerBox.classList.remove("favorite-collapse-repository");
+            showRepository = false;
+        }
+
     }
-    
-    let repositorios = document.createElement('div');
+    window.showListFavorites = () => {
+        showRepository = false;
+        let favorites = document.querySelector(".favorite-table--favorites");
+        let repositorios = document.querySelector(".favorite-table--repositorios");
+        let centerBox = document.querySelector(".favorite-center--box");
+        let idFavorites = document.getElementById('favorites');
+        if(addFavoriteList){
+            idFavorites.appendChild(ListFavorites())
+            addFavoriteList= false;
+        }
+
+        if (!showFavorites) {
+            favorites.classList.add("show");
+            repositorios.classList.remove("show");
+            centerBox.classList.add("favorite-collapse-favorites");
+            centerBox.classList.remove("favorite-collapse-repository");
+            showFavorites = true;
+        } else {
+            favorites.classList.remove("show");
+            centerBox.classList.remove("favorite-collapse-favorites");
+            centerBox.classList.remove("favorite-collapse-repository");
+            showFavorites = false;
+        }
+    }
+
+    let favorite = document.createElement('div');
     getUser().then((response) => {
-        console.log(response)
-        repositorios.innerHTML = `<div id="desafio" class="favorite">
+        favorite.innerHTML = `<div id="desafio" class="favorite">
         <div class="favorite-column">
             <div class="favorite-title--box">
                 <h1>Titulo</h1>
@@ -37,29 +90,12 @@ export default () => {
                     </div>
                     <div class="favorite-list-repos--button">
                         ${buttonRepositorio}
-                        <div class="favorite-div-button">Ver repositório</div>
+                        ${buttonFavorites}
                         </div>
                     </div>
-                <div id="repositorio" class="favorite-table--repositorios hide">
-                    <div>
-                        <h2> Lista de reposítórios </h2>
-                    </div>
-                    <div class="repositorios-overflow">
-                        <table>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                            </tr>
-                        </table>
-                    </div>
+                <div id="repository" class="favorite-table--repositorios hide">
+                </div>
+                <div id="favorites" class="favorite-table--favorites hide">              
                 </div>
             </div>
             <div class="favorite-footer">
@@ -69,5 +105,5 @@ export default () => {
     </div>`
     })
 
-    return repositorios;
+    return favorite;
 } 

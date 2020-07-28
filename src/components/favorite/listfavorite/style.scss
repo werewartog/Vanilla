@@ -1,0 +1,14 @@
+.listFavorite{
+    &-container {
+        height: 163px;
+    }
+    &-table{
+        width: 100%;
+    }
+    &-line{
+        padding: 7px;
+    }
+    &-table--background:nth-child(odd){
+        background: #9ad2ab;
+    }
+}
