@@ -4,7 +4,6 @@ import './style.scss'
 export default () => {
     let favorites = document.createElement('div');
     getUserRepoFav().then((response) => {
-        console.log(response)
         favorites.innerHTML = `
         <div class="listFavorite-container">
             <div>

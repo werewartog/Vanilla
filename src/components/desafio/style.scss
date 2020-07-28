@@ -1,4 +1,4 @@
-.favorite {
+.desafio {
     &-column {
         display: flex;
         justify-content: space-between;
@@ -27,8 +27,8 @@
         transform: translate(-50%, -50%);
     }
     &-collapse-repository {
-        max-height: 350px;
-        min-height: 350px;
+        max-height: 380px;
+        min-height: 380px;
         margin-bottom: 18px;
         box-shadow: 0px 1px 3px #ccc;
         padding: 35px 25px;
@@ -44,8 +44,8 @@
         transform: unset;
     }
     &-collapse-favorites {
-        max-height: 350px;
-        min-height: 350px;
+        max-height: 380px;
+        min-height: 380px;
         margin-bottom: 18px;
         box-shadow: 0px 1px 3px #ccc;
         padding: 35px 25px;
@@ -88,6 +88,9 @@
     &-list-repos {
         display: flex;
         flex-direction: column;
+        span {
+            margin-top: 10px;
+        }
     }
     &-list-repos--button {
         display: flex;
@@ -126,16 +129,21 @@
         color: #8abb98;
         background-color: rgb(236, 236, 236);
     }
+    &-div-button-focus {
+        border: solid 1.5px #8abb98;
+        color: #8abb98;
+        background-color: rgb(236, 236, 236);
+    }
 }
 .repository {
     &-overflow {
-        max-height: 90px;
+        max-height: 135px;
         overflow: auto;
     }
 }
 .favorites {
     &-overflow {
-        max-height: 90px;
+        max-height: 135px;
         overflow: auto;
     }
 }

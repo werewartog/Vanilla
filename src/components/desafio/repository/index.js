@@ -4,7 +4,6 @@ import './style.scss'
 export default () => {
     let repository = document.createElement('div');
     getUserRepo().then((response) => {
-        console.log(response)
         repository.innerHTML = `
         <div class="repository-container">
             <div>
