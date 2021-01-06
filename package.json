@@ -25,7 +25,7 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "haunted": "^4.5.4",
     "lit-html": "^1.1.2",
     "node-sass": "^4.14.1",
